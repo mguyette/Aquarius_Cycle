@@ -1,11 +1,8 @@
 ---
 github: "mguyette/Aquarius_Cycle"
 linkedin: "margaret-guyette"
-# output: github_document
-output:
-  html_document:
-    keep_md: true
-# always_allow_html: true
+output: github_document
+always_allow_html: true
 ---
 
 
@@ -14,6 +11,7 @@ output:
 # Required packages
 library(knitr)
 library(kableExtra)
+library(pander)
 ```
 
 The St. Johns River Water Management District uses Sea-Bird Scientific HydroCycle-PO4 Phosphate Sensors to collect phosphate data to support various projects.  These are continuously deployed, collecting data every two hours and transmitting data files to District servers via telemetry.  The data files are not formatted well for direct import into AQUARIUS Time-Series, and there is some pre-processing that makes it easier for the data to be quality assured once it is imported.
@@ -21,11 +19,14 @@ The St. Johns River Water Management District uses Sea-Bird Scientific HydroCycl
 This script was designed to use only base packages
 
 The program for HydroCycle-PO4 data used by the District is formatted like this: 
-```{r}
+```{r, results = 'asis'}
 df <- read.csv("~/Documents/RProjects/Aquarius_Cycle/DataFiles/Jane_Green_Creek_CM_Cycle.dat",
                header = F, check.names = F)
 colnames(df) <- as.character(unlist(df[2,]))
-kable(head(df))
+```
+
+```{r, echo = F}
+pander(head(df), style = "rmarkdown", split.tables = Inf)
 ```
 
 First we need to strip the four header rows with metadata from the dataframe. This is not needed during pre-processing, but it will be bound back to the corrected data after pre-processing.
