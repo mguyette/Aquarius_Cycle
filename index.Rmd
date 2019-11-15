@@ -1,36 +1,10 @@
 ---
-title: "HydroCycle Data Pre-Processing for AQUARIUS Time-Series"
-author: "Margaret Guyette"
 github: "mguyette/Aquarius_Cycle"
 linkedin: "margaret-guyette"
 output: github_document
 always_allow_html: true
 ---
 
-<style>
-  .flat-table {
-    display: block;
-    font-family: sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 115%;
-    overflow: auto;
-    width: auto;
-  }
-  thead {
-    background-color: rgb(112, 196, 105);
-    color: white;
-    font-weight: normal;
-    padding: 20px 30px;
-    text-align: center;
-  }
-  tbody {
-    background-color: rgb(238, 238, 238);
-    color: rgb(111, 111, 111);
-    padding: 20px 30px;
-  }
-</style>
-
-### Pre-processing HydroCycle-PO4 Data Files for AQUARIUS Time-Series Integration
 
 
 ```{r include = F}

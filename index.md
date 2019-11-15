@@ -1,30 +1,3 @@
-HydroCycle Data Pre-Processing for AQUARIUS Time-Series
-================
-Margaret Guyette
-
-<style>
-  .flat-table {
-    display: block;
-    font-family: sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 115%;
-    overflow: auto;
-    width: auto;
-  }
-  thead {
-    background-color: rgb(112, 196, 105);
-    color: white;
-    font-weight: normal;
-    padding: 20px 30px;
-    text-align: center;
-  }
-  tbody {
-    background-color: rgb(238, 238, 238);
-    color: rgb(111, 111, 111);
-    padding: 20px 30px;
-  }
-</style>
-### Pre-processing HydroCycle-PO4 Data Files for AQUARIUS Time-Series Integration
 
 The St. Johns River Water Management District uses Sea-Bird Scientific HydroCycle-PO4 Phosphate Sensors to collect phosphate data to support various projects. These are continuously deployed, collecting data every two hours and transmitting data files to District servers via telemetry. The data files are not formatted well for direct import into AQUARIUS Time-Series, and there is some pre-processing that makes it easier for the data to be quality assured once it is imported.
 
