@@ -7,7 +7,7 @@ The program for HydroCycle-PO4 data used by the District is formatted like this:
 
 ``` r
 df <- read.csv("~/Documents/RProjects/Aquarius_Cycle/DataFiles/Jane_Green_Creek_CM_Cycle.dat",
-               header = F)
+               header = F, check.names = F)
 colnames(df) <- as.character(unlist(df[2,]))
 kable(head(df))
 ```
