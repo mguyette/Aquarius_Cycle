@@ -39,15 +39,281 @@ colnames(df) <- as.character(unlist(df[2,]))
 kable(head(df))
 ```
 
-| TIMESTAMP           | RECORD                 | CycleP\_RunNum | CycleP\_PO4mgL | CycleP\_OAQC     | CycleP\_QC1                        | CycleP\_QC2 | CycleP\_BattVolt | CycleP\_Flush1Avg | CycleP\_Last\_Smp\_Status | CycleP\_Date\_Year | CycleP\_Date\_MMDD | CycleP\_Time\_HHMM |
-|:--------------------|:-----------------------|:---------------|:---------------|:-----------------|:-----------------------------------|:------------|:-----------------|:------------------|:--------------------------|:-------------------|:-------------------|:-------------------|
-| TOA5                | Jane\_Green\_Creek\_CM | CR1000         | 72020          | CR1000.Std.27.04 | CPU:CM\_2017\_New\_Cycle\_Ver2.CR1 | 22435       | Cycle            |                   |                           |                    |                    |                    |
-| TIMESTAMP           | RECORD                 | CycleP\_RunNum | CycleP\_PO4mgL | CycleP\_OAQC     | CycleP\_QC1                        | CycleP\_QC2 | CycleP\_BattVolt | CycleP\_Flush1Avg | CycleP\_Last\_Smp\_Status | CycleP\_Date\_Year | CycleP\_Date\_MMDD | CycleP\_Time\_HHMM |
-| TS                  | RN                     |                |                |                  |                                    |             |                  |                   |                           |                    |                    |                    |
-|                     |                        | Smp            | Smp            | Smp              | Smp                                | Smp         | Smp              | Smp               | Smp                       | Smp                | Smp                | Smp                |
-| 2018-02-06 16:00:00 | 14                     | NAN            | NAN            | NAN              | NAN                                | NAN         | NAN              | NAN               | NAN                       | NAN                | NAN                | NAN                |
-| 2018-02-06 18:00:00 | 15                     | NAN            | NAN            | NAN              | NAN                                | NAN         | NAN              | NAN               | NAN                       | NAN                | NAN                | NAN                |
-
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+TIMESTAMP
+</th>
+<th style="text-align:left;">
+RECORD
+</th>
+<th style="text-align:left;">
+CycleP\_RunNum
+</th>
+<th style="text-align:left;">
+CycleP\_PO4mgL
+</th>
+<th style="text-align:left;">
+CycleP\_OAQC
+</th>
+<th style="text-align:left;">
+CycleP\_QC1
+</th>
+<th style="text-align:left;">
+CycleP\_QC2
+</th>
+<th style="text-align:left;">
+CycleP\_BattVolt
+</th>
+<th style="text-align:left;">
+CycleP\_Flush1Avg
+</th>
+<th style="text-align:left;">
+CycleP\_Last\_Smp\_Status
+</th>
+<th style="text-align:left;">
+CycleP\_Date\_Year
+</th>
+<th style="text-align:left;">
+CycleP\_Date\_MMDD
+</th>
+<th style="text-align:left;">
+CycleP\_Time\_HHMM
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+TOA5
+</td>
+<td style="text-align:left;">
+Jane\_Green\_Creek\_CM
+</td>
+<td style="text-align:left;">
+CR1000
+</td>
+<td style="text-align:left;">
+72020
+</td>
+<td style="text-align:left;">
+CR1000.Std.27.04
+</td>
+<td style="text-align:left;">
+CPU:CM\_2017\_New\_Cycle\_Ver2.CR1
+</td>
+<td style="text-align:left;">
+22435
+</td>
+<td style="text-align:left;">
+Cycle
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TIMESTAMP
+</td>
+<td style="text-align:left;">
+RECORD
+</td>
+<td style="text-align:left;">
+CycleP\_RunNum
+</td>
+<td style="text-align:left;">
+CycleP\_PO4mgL
+</td>
+<td style="text-align:left;">
+CycleP\_OAQC
+</td>
+<td style="text-align:left;">
+CycleP\_QC1
+</td>
+<td style="text-align:left;">
+CycleP\_QC2
+</td>
+<td style="text-align:left;">
+CycleP\_BattVolt
+</td>
+<td style="text-align:left;">
+CycleP\_Flush1Avg
+</td>
+<td style="text-align:left;">
+CycleP\_Last\_Smp\_Status
+</td>
+<td style="text-align:left;">
+CycleP\_Date\_Year
+</td>
+<td style="text-align:left;">
+CycleP\_Date\_MMDD
+</td>
+<td style="text-align:left;">
+CycleP\_Time\_HHMM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TS
+</td>
+<td style="text-align:left;">
+RN
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2018-02-06 16:00:00
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2018-02-06 18:00:00
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+</tr>
+</tbody>
+</table>
 First we need to strip the four header rows with metadata from the dataframe. This is not needed during pre-processing, but it will be bound back to the corrected data after pre-processing.
 
 ``` r
@@ -55,23 +321,341 @@ dfhead <- df[1:4,]
 kable(dfhead)
 ```
 
-| TIMESTAMP | RECORD                 | CycleP\_RunNum | CycleP\_PO4mgL | CycleP\_OAQC     | CycleP\_QC1                        | CycleP\_QC2 | CycleP\_BattVolt | CycleP\_Flush1Avg | CycleP\_Last\_Smp\_Status | CycleP\_Date\_Year | CycleP\_Date\_MMDD | CycleP\_Time\_HHMM |
-|:----------|:-----------------------|:---------------|:---------------|:-----------------|:-----------------------------------|:------------|:-----------------|:------------------|:--------------------------|:-------------------|:-------------------|:-------------------|
-| TOA5      | Jane\_Green\_Creek\_CM | CR1000         | 72020          | CR1000.Std.27.04 | CPU:CM\_2017\_New\_Cycle\_Ver2.CR1 | 22435       | Cycle            |                   |                           |                    |                    |                    |
-| TIMESTAMP | RECORD                 | CycleP\_RunNum | CycleP\_PO4mgL | CycleP\_OAQC     | CycleP\_QC1                        | CycleP\_QC2 | CycleP\_BattVolt | CycleP\_Flush1Avg | CycleP\_Last\_Smp\_Status | CycleP\_Date\_Year | CycleP\_Date\_MMDD | CycleP\_Time\_HHMM |
-| TS        | RN                     |                |                |                  |                                    |             |                  |                   |                           |                    |                    |                    |
-|           |                        | Smp            | Smp            | Smp              | Smp                                | Smp         | Smp              | Smp               | Smp                       | Smp                | Smp                | Smp                |
-
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+TIMESTAMP
+</th>
+<th style="text-align:left;">
+RECORD
+</th>
+<th style="text-align:left;">
+CycleP\_RunNum
+</th>
+<th style="text-align:left;">
+CycleP\_PO4mgL
+</th>
+<th style="text-align:left;">
+CycleP\_OAQC
+</th>
+<th style="text-align:left;">
+CycleP\_QC1
+</th>
+<th style="text-align:left;">
+CycleP\_QC2
+</th>
+<th style="text-align:left;">
+CycleP\_BattVolt
+</th>
+<th style="text-align:left;">
+CycleP\_Flush1Avg
+</th>
+<th style="text-align:left;">
+CycleP\_Last\_Smp\_Status
+</th>
+<th style="text-align:left;">
+CycleP\_Date\_Year
+</th>
+<th style="text-align:left;">
+CycleP\_Date\_MMDD
+</th>
+<th style="text-align:left;">
+CycleP\_Time\_HHMM
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+TOA5
+</td>
+<td style="text-align:left;">
+Jane\_Green\_Creek\_CM
+</td>
+<td style="text-align:left;">
+CR1000
+</td>
+<td style="text-align:left;">
+72020
+</td>
+<td style="text-align:left;">
+CR1000.Std.27.04
+</td>
+<td style="text-align:left;">
+CPU:CM\_2017\_New\_Cycle\_Ver2.CR1
+</td>
+<td style="text-align:left;">
+22435
+</td>
+<td style="text-align:left;">
+Cycle
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TIMESTAMP
+</td>
+<td style="text-align:left;">
+RECORD
+</td>
+<td style="text-align:left;">
+CycleP\_RunNum
+</td>
+<td style="text-align:left;">
+CycleP\_PO4mgL
+</td>
+<td style="text-align:left;">
+CycleP\_OAQC
+</td>
+<td style="text-align:left;">
+CycleP\_QC1
+</td>
+<td style="text-align:left;">
+CycleP\_QC2
+</td>
+<td style="text-align:left;">
+CycleP\_BattVolt
+</td>
+<td style="text-align:left;">
+CycleP\_Flush1Avg
+</td>
+<td style="text-align:left;">
+CycleP\_Last\_Smp\_Status
+</td>
+<td style="text-align:left;">
+CycleP\_Date\_Year
+</td>
+<td style="text-align:left;">
+CycleP\_Date\_MMDD
+</td>
+<td style="text-align:left;">
+CycleP\_Time\_HHMM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TS
+</td>
+<td style="text-align:left;">
+RN
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+</tr>
+</tbody>
+</table>
 ``` r
 dfdata <- df[-c(1:4),]
 kable(head(dfdata, 2))
 ```
 
-|     | TIMESTAMP           | RECORD | CycleP\_RunNum | CycleP\_PO4mgL | CycleP\_OAQC | CycleP\_QC1 | CycleP\_QC2 | CycleP\_BattVolt | CycleP\_Flush1Avg | CycleP\_Last\_Smp\_Status | CycleP\_Date\_Year | CycleP\_Date\_MMDD | CycleP\_Time\_HHMM |
-|-----|:--------------------|:-------|:---------------|:---------------|:-------------|:------------|:------------|:-----------------|:------------------|:--------------------------|:-------------------|:-------------------|:-------------------|
-| 5   | 2018-02-06 16:00:00 | 14     | NAN            | NAN            | NAN          | NAN         | NAN         | NAN              | NAN               | NAN                       | NAN                | NAN                | NAN                |
-| 6   | 2018-02-06 18:00:00 | 15     | NAN            | NAN            | NAN          | NAN         | NAN         | NAN              | NAN               | NAN                       | NAN                | NAN                | NAN                |
-
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+TIMESTAMP
+</th>
+<th style="text-align:left;">
+RECORD
+</th>
+<th style="text-align:left;">
+CycleP\_RunNum
+</th>
+<th style="text-align:left;">
+CycleP\_PO4mgL
+</th>
+<th style="text-align:left;">
+CycleP\_OAQC
+</th>
+<th style="text-align:left;">
+CycleP\_QC1
+</th>
+<th style="text-align:left;">
+CycleP\_QC2
+</th>
+<th style="text-align:left;">
+CycleP\_BattVolt
+</th>
+<th style="text-align:left;">
+CycleP\_Flush1Avg
+</th>
+<th style="text-align:left;">
+CycleP\_Last\_Smp\_Status
+</th>
+<th style="text-align:left;">
+CycleP\_Date\_Year
+</th>
+<th style="text-align:left;">
+CycleP\_Date\_MMDD
+</th>
+<th style="text-align:left;">
+CycleP\_Time\_HHMM
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+2018-02-06 16:00:00
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+2018-02-06 18:00:00
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+<td style="text-align:left;">
+NAN
+</td>
+</tr>
+</tbody>
+</table>
 Checking the structure of dfdata reveals that we need to change certain field classes.
 
 ``` r
@@ -121,13 +705,147 @@ The Time-Series are updated regularly, so we work with only 30 days of data each
 
 ``` r
 dfdata <- dfdata[dfdata$TIMESTAMP > (max(dfdata$TIMESTAMP) - 30),]
-kable(head(dfdata, 2))
+kable(head(dfdata, 2)) %>% 
+  scroll_box(width = "100%")
 ```
 
-|      | TIMESTAMP  |  RECORD|  CycleP\_RunNum|  CycleP\_PO4mgL|  CycleP\_OAQC|  CycleP\_QC1|  CycleP\_QC2|  CycleP\_BattVolt|  CycleP\_Flush1Avg|  CycleP\_Last\_Smp\_Status|  CycleP\_Date\_Year|  CycleP\_Date\_MMDD|  CycleP\_Time\_HHMM|
-|------|:-----------|-------:|---------------:|---------------:|-------------:|------------:|------------:|-----------------:|------------------:|--------------------------:|-------------------:|-------------------:|-------------------:|
-| 7353 | 2019-10-12 |    1471|              19|           0.209|             1|          111|        112.2|              12.1|               3329|                          4|                2019|               10.11|               22.04|
-| 7354 | 2019-10-12 |    1472|              20|           0.212|             1|          111|        112.2|              12.1|               3329|                          4|                2019|               10.12|                0.04|
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+TIMESTAMP
+</th>
+<th style="text-align:right;">
+RECORD
+</th>
+<th style="text-align:right;">
+CycleP\_RunNum
+</th>
+<th style="text-align:right;">
+CycleP\_PO4mgL
+</th>
+<th style="text-align:right;">
+CycleP\_OAQC
+</th>
+<th style="text-align:right;">
+CycleP\_QC1
+</th>
+<th style="text-align:right;">
+CycleP\_QC2
+</th>
+<th style="text-align:right;">
+CycleP\_BattVolt
+</th>
+<th style="text-align:right;">
+CycleP\_Flush1Avg
+</th>
+<th style="text-align:right;">
+CycleP\_Last\_Smp\_Status
+</th>
+<th style="text-align:right;">
+CycleP\_Date\_Year
+</th>
+<th style="text-align:right;">
+CycleP\_Date\_MMDD
+</th>
+<th style="text-align:right;">
+CycleP\_Time\_HHMM
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+7353
+</td>
+<td style="text-align:left;">
+2019-10-12
+</td>
+<td style="text-align:right;">
+1471
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+0.209
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+112.2
+</td>
+<td style="text-align:right;">
+12.1
+</td>
+<td style="text-align:right;">
+3329
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+10.11
+</td>
+<td style="text-align:right;">
+22.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7354
+</td>
+<td style="text-align:left;">
+2019-10-12
+</td>
+<td style="text-align:right;">
+1472
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0.212
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+112.2
+</td>
+<td style="text-align:right;">
+12.1
+</td>
+<td style="text-align:right;">
+3329
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+10.12
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+</tr>
+</tbody>
+</table>
 
 To align data within AQUARIUS Time-Series, HydroCycle-PO4 data are rounded to the closest hour.
 
@@ -138,11 +856,152 @@ dfdata$CycleP_Rounded_Time <- ifelse(round((dfdata$CycleP_Time %% 1) * 100) < 30
 kable(head(dfdata, 2))
 ```
 
-|      | TIMESTAMP  |  RECORD|  CycleP\_RunNum|  CycleP\_PO4mgL|  CycleP\_OAQC|  CycleP\_QC1|  CycleP\_QC2|  CycleP\_BattVolt|  CycleP\_Flush1Avg|  CycleP\_Last\_Smp\_Status|  CycleP\_Date\_Year|  CycleP\_Date\_MMDD|  CycleP\_Time\_HHMM|  CycleP\_Rounded\_Time|
-|------|:-----------|-------:|---------------:|---------------:|-------------:|------------:|------------:|-----------------:|------------------:|--------------------------:|-------------------:|-------------------:|-------------------:|----------------------:|
-| 7353 | 2019-10-12 |    1471|              19|           0.209|             1|          111|        112.2|              12.1|               3329|                          4|                2019|               10.11|               22.04|                     22|
-| 7354 | 2019-10-12 |    1472|              20|           0.212|             1|          111|        112.2|              12.1|               3329|                          4|                2019|               10.12|                0.04|                      0|
-
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+TIMESTAMP
+</th>
+<th style="text-align:right;">
+RECORD
+</th>
+<th style="text-align:right;">
+CycleP\_RunNum
+</th>
+<th style="text-align:right;">
+CycleP\_PO4mgL
+</th>
+<th style="text-align:right;">
+CycleP\_OAQC
+</th>
+<th style="text-align:right;">
+CycleP\_QC1
+</th>
+<th style="text-align:right;">
+CycleP\_QC2
+</th>
+<th style="text-align:right;">
+CycleP\_BattVolt
+</th>
+<th style="text-align:right;">
+CycleP\_Flush1Avg
+</th>
+<th style="text-align:right;">
+CycleP\_Last\_Smp\_Status
+</th>
+<th style="text-align:right;">
+CycleP\_Date\_Year
+</th>
+<th style="text-align:right;">
+CycleP\_Date\_MMDD
+</th>
+<th style="text-align:right;">
+CycleP\_Time\_HHMM
+</th>
+<th style="text-align:right;">
+CycleP\_Rounded\_Time
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+7353
+</td>
+<td style="text-align:left;">
+2019-10-12
+</td>
+<td style="text-align:right;">
+1471
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+0.209
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+112.2
+</td>
+<td style="text-align:right;">
+12.1
+</td>
+<td style="text-align:right;">
+3329
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+10.11
+</td>
+<td style="text-align:right;">
+22.04
+</td>
+<td style="text-align:right;">
+22
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7354
+</td>
+<td style="text-align:left;">
+2019-10-12
+</td>
+<td style="text-align:right;">
+1472
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0.212
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+112.2
+</td>
+<td style="text-align:right;">
+12.1
+</td>
+<td style="text-align:right;">
+3329
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+10.12
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
 Before proceeding, rows that contain no data or zeroes in the Date field are removed.
 
 ``` r
@@ -173,11 +1032,161 @@ dfdata$TIMESTAMP <- as.POSIXct(dfdata$TIMESTAMP,format = c("%Y-%m-%d %H:%M"), tz
 kable(head(dfdata, 2))
 ```
 
-|      | TIMESTAMP           |  RECORD|  CycleP\_RunNum|  CycleP\_PO4mgL|  CycleP\_OAQC|  CycleP\_QC1|  CycleP\_QC2|  CycleP\_BattVolt|  CycleP\_Flush1Avg|  CycleP\_Last\_Smp\_Status|  CycleP\_Date\_Year|  CycleP\_Date\_MMDD|  CycleP\_Time\_HHMM|  CycleP\_Rounded\_Time|  keep|
-|------|:--------------------|-------:|---------------:|---------------:|-------------:|------------:|------------:|-----------------:|------------------:|--------------------------:|-------------------:|-------------------:|-------------------:|----------------------:|-----:|
-| 7353 | 2019-10-11 22:00:00 |    1471|              19|           0.209|             1|          111|        112.2|              12.1|               3329|                          4|                2019|               10.11|               22.04|                     22|     1|
-| 7354 | 2019-10-12 00:00:00 |    1472|              20|           0.212|             1|          111|        112.2|              12.1|               3329|                          4|                2019|               10.12|                0.04|                      0|     1|
-
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+TIMESTAMP
+</th>
+<th style="text-align:right;">
+RECORD
+</th>
+<th style="text-align:right;">
+CycleP\_RunNum
+</th>
+<th style="text-align:right;">
+CycleP\_PO4mgL
+</th>
+<th style="text-align:right;">
+CycleP\_OAQC
+</th>
+<th style="text-align:right;">
+CycleP\_QC1
+</th>
+<th style="text-align:right;">
+CycleP\_QC2
+</th>
+<th style="text-align:right;">
+CycleP\_BattVolt
+</th>
+<th style="text-align:right;">
+CycleP\_Flush1Avg
+</th>
+<th style="text-align:right;">
+CycleP\_Last\_Smp\_Status
+</th>
+<th style="text-align:right;">
+CycleP\_Date\_Year
+</th>
+<th style="text-align:right;">
+CycleP\_Date\_MMDD
+</th>
+<th style="text-align:right;">
+CycleP\_Time\_HHMM
+</th>
+<th style="text-align:right;">
+CycleP\_Rounded\_Time
+</th>
+<th style="text-align:right;">
+keep
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+7353
+</td>
+<td style="text-align:left;">
+2019-10-11 22:00:00
+</td>
+<td style="text-align:right;">
+1471
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+0.209
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+112.2
+</td>
+<td style="text-align:right;">
+12.1
+</td>
+<td style="text-align:right;">
+3329
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+10.11
+</td>
+<td style="text-align:right;">
+22.04
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7354
+</td>
+<td style="text-align:left;">
+2019-10-12 00:00:00
+</td>
+<td style="text-align:right;">
+1472
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0.212
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+112.2
+</td>
+<td style="text-align:right;">
+12.1
+</td>
+<td style="text-align:right;">
+3329
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+10.12
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
 The rounded time field is removed.
 
 ``` r
@@ -284,11 +1293,279 @@ alldata <- alldata[, -which(names(alldata) %in% c("CycleP_Date_Year"))]
 kable(head(alldata))
 ```
 
-|      | TIMESTAMP           | RECORD                 | CycleP\_RunNum | CycleP\_PO4mgL | CycleP\_OAQC     | CycleP\_QC1                        | CycleP\_QC2 | CycleP\_BattVolt | CycleP\_Flush1Avg | CycleP\_Last\_Smp\_Status | CycleP\_Date\_MMDD | CycleP\_Time\_HHMM |
-|------|:--------------------|:-----------------------|:---------------|:---------------|:-----------------|:-----------------------------------|:------------|:-----------------|:------------------|:--------------------------|:-------------------|:-------------------|
-| 1    | TOA5                | Jane\_Green\_Creek\_CM | CR1000         | 72020          | CR1000.Std.27.04 | CPU:CM\_2017\_New\_Cycle\_Ver2.CR1 | 22435       | Cycle            |                   |                           |                    |                    |
-| 2    | TIMESTAMP           | RECORD                 | CycleP\_RunNum | CycleP\_PO4mgL | CycleP\_OAQC     | CycleP\_QC1                        | CycleP\_QC2 | CycleP\_BattVolt | CycleP\_Flush1Avg | CycleP\_Last\_Smp\_Status | CycleP\_Date\_MMDD | CycleP\_Time\_HHMM |
-| 3    | TS                  | RN                     |                |                |                  |                                    |             |                  |                   |                           |                    |                    |
-| 4    |                     |                        | Smp            | Smp            | Smp              | Smp                                | Smp         | Smp              | Smp               | Smp                       | Smp                | Smp                |
-| 7353 | 2019-10-11 22:00:00 | 1471                   | 19             | 0.209          | 1                | 111                                | 112.2       | 12.1             | 3329              | 4                         | 10.11              | 22.04              |
-| 7354 | 2019-10-12 00:00:00 | 1472                   | 20             | 0.212          | 1                | 111                                | 112.2       | 12.1             | 3329              | 4                         | 10.12              | 0.04               |
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+TIMESTAMP
+</th>
+<th style="text-align:left;">
+RECORD
+</th>
+<th style="text-align:left;">
+CycleP\_RunNum
+</th>
+<th style="text-align:left;">
+CycleP\_PO4mgL
+</th>
+<th style="text-align:left;">
+CycleP\_OAQC
+</th>
+<th style="text-align:left;">
+CycleP\_QC1
+</th>
+<th style="text-align:left;">
+CycleP\_QC2
+</th>
+<th style="text-align:left;">
+CycleP\_BattVolt
+</th>
+<th style="text-align:left;">
+CycleP\_Flush1Avg
+</th>
+<th style="text-align:left;">
+CycleP\_Last\_Smp\_Status
+</th>
+<th style="text-align:left;">
+CycleP\_Date\_MMDD
+</th>
+<th style="text-align:left;">
+CycleP\_Time\_HHMM
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+TOA5
+</td>
+<td style="text-align:left;">
+Jane\_Green\_Creek\_CM
+</td>
+<td style="text-align:left;">
+CR1000
+</td>
+<td style="text-align:left;">
+72020
+</td>
+<td style="text-align:left;">
+CR1000.Std.27.04
+</td>
+<td style="text-align:left;">
+CPU:CM\_2017\_New\_Cycle\_Ver2.CR1
+</td>
+<td style="text-align:left;">
+22435
+</td>
+<td style="text-align:left;">
+Cycle
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+TIMESTAMP
+</td>
+<td style="text-align:left;">
+RECORD
+</td>
+<td style="text-align:left;">
+CycleP\_RunNum
+</td>
+<td style="text-align:left;">
+CycleP\_PO4mgL
+</td>
+<td style="text-align:left;">
+CycleP\_OAQC
+</td>
+<td style="text-align:left;">
+CycleP\_QC1
+</td>
+<td style="text-align:left;">
+CycleP\_QC2
+</td>
+<td style="text-align:left;">
+CycleP\_BattVolt
+</td>
+<td style="text-align:left;">
+CycleP\_Flush1Avg
+</td>
+<td style="text-align:left;">
+CycleP\_Last\_Smp\_Status
+</td>
+<td style="text-align:left;">
+CycleP\_Date\_MMDD
+</td>
+<td style="text-align:left;">
+CycleP\_Time\_HHMM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+TS
+</td>
+<td style="text-align:left;">
+RN
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+<td style="text-align:left;">
+Smp
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7353
+</td>
+<td style="text-align:left;">
+2019-10-11 22:00:00
+</td>
+<td style="text-align:left;">
+1471
+</td>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:left;">
+0.209
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+111
+</td>
+<td style="text-align:left;">
+112.2
+</td>
+<td style="text-align:left;">
+12.1
+</td>
+<td style="text-align:left;">
+3329
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+10.11
+</td>
+<td style="text-align:left;">
+22.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7354
+</td>
+<td style="text-align:left;">
+2019-10-12 00:00:00
+</td>
+<td style="text-align:left;">
+1472
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+0.212
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+111
+</td>
+<td style="text-align:left;">
+112.2
+</td>
+<td style="text-align:left;">
+12.1
+</td>
+<td style="text-align:left;">
+3329
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+10.12
+</td>
+<td style="text-align:left;">
+0.04
+</td>
+</tr>
+</tbody>
+</table>
