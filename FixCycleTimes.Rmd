@@ -1,9 +1,9 @@
 ---
 title: "HydroCycle Data Pre-Processing for AQUARIUS Time-Series"
 author: "Margaret Guyette"
+github: "mguyette/Aquarius_Cycle"
+linkedin: "margaret-guyette"
 output: github_document
-  # html_document:
-  #   keep_md: TRUE
 ---
 
 ### Pre-processing HydroCycle-PO4 Data Files for AQUARIUS Time-Series Integration
