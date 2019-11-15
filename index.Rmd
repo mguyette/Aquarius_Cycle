@@ -10,7 +10,6 @@ always_allow_html: true
 ```{r include = F}
 # Required packages
 library(knitr)
-library(kableExtra)
 library(pander)
 ```
 
@@ -20,24 +19,21 @@ This script was designed to use only base packages
 
 The program for HydroCycle-PO4 data used by the District is formatted like this: 
 ```{r, results = 'asis'}
-df <- read.csv("~/Documents/RProjects/Aquarius_Cycle/DataFiles/Jane_Green_Creek_CM_Cycle.dat",
+df <- read.csv("./DataFiles/Jane_Green_Creek_CM_Cycle.dat",
                header = F, check.names = F)
 colnames(df) <- as.character(unlist(df[2,]))
-```
-
-```{r, echo = F}
 pander(head(df), style = "rmarkdown", split.tables = Inf)
 ```
 
 First we need to strip the four header rows with metadata from the dataframe. This is not needed during pre-processing, but it will be bound back to the corrected data after pre-processing.
 ```{r}
 dfhead <- df[1:4,]
-kable(dfhead)
+pander(dfhead, style = "rmarkdown", split.tables = Inf)
 ```
 
 ```{r}
 dfdata <- df[-c(1:4),]
-kable(head(dfdata, 2))
+pander(head(dfdata, 2), style = "rmarkdown", split.tables = Inf)
 ```
 
 Checking the structure of dfdata reveals that we need to change certain field classes.
@@ -56,8 +52,7 @@ str(dfdata)
 The Time-Series are updated regularly, so we work with only 30 days of data each time.
 ```{r}
 dfdata <- dfdata[dfdata$TIMESTAMP > (max(dfdata$TIMESTAMP) - 30),]
-kable(head(dfdata, 2)) %>% 
-  scroll_box(width = "100%")
+pander(head(dfdata, 2), style = "rmarkdown", split.tables = Inf)
 ```
 
 To align data within AQUARIUS Time-Series, HydroCycle-PO4 data are rounded to the closest hour.
@@ -65,7 +60,7 @@ To align data within AQUARIUS Time-Series, HydroCycle-PO4 data are rounded to th
 dfdata$CycleP_Rounded_Time <- ifelse(round((dfdata$CycleP_Time %% 1) * 100) < 30,
                                             trunc(dfdata$CycleP_Time_HHMM),
                                             ceiling(dfdata$CycleP_Time_HHMM))
-kable(head(dfdata, 2))
+pander(head(dfdata, 2), style = "rmarkdown", split.tables = Inf)
 ```
 
 Before proceeding, rows that contain no data or zeroes in the Date field are removed.
@@ -93,7 +88,7 @@ if(nrow(dfdata) > 0) {
   }
 }
 dfdata$TIMESTAMP <- as.POSIXct(dfdata$TIMESTAMP,format = c("%Y-%m-%d %H:%M"), tz = "EST")
-kable(head(dfdata, 2))
+pander(head(dfdata, 2), style = "rmarkdown", split.tables = Inf)
 ```
 
 The rounded time field is removed.
@@ -149,7 +144,6 @@ dfdata <- dfdata[dfdata$keep == 1, c(1:(length(dfdata)-1))]
 As long as data still exist, if an error occurred in the program where the incorrect units were stored, the values are corrected to convert to mgP/L.
 ```{r}
 if(nrow(dfdata) > 0) {
-  ## Correct CycleP_PO4mgL field if the units were stored incorrectly
   for(i in 1:nrow(dfdata)) {
     if((dfdata$CycleP_QC2[i] * 10) %% 10 == 1) {
       dfdata$CycleP_PO4mgL[i] <- round(dfdata$CycleP_PO4mgL[i]/3.06618,4)
@@ -161,7 +155,7 @@ if(nrow(dfdata) > 0) {
 
 All fields need to be stored as factors so they can be reattached to the header.
 ```{r}
-dfdata[,1:length(dfdata)] <- sapply(dfdata[,1:length(dfdata)], as.factor)
+dfdata[,1:length(dfdata)] <- lapply(dfdata[,1:length(dfdata)], as.factor)
 str(dfdata)
 ```
 
@@ -174,5 +168,5 @@ The header file and data file are combined again, and the CycleP_Date_Year field
 ```{r}
 alldata <- rbind(dfhead,dfdata)
 alldata <- alldata[, -which(names(alldata) %in% c("CycleP_Date_Year"))]
-kable(head(alldata))
+pander(head(alldata), style = "rmarkdown", split.tables = Inf)
 ```
