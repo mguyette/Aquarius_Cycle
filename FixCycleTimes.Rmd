@@ -1,7 +1,9 @@
 ---
 title: "HydroCycle Data Pre-Processing for AQUARIUS Time-Series"
 author: "Margaret Guyette"
-output: html_document
+output: github_document
+  # html_document:
+  #   keep_md: TRUE
 ---
 
 ### Pre-processing HydroCycle-PO4 Data Files for AQUARIUS Time-Series Integration
@@ -9,7 +11,7 @@ output: html_document
 
 ```{r include = F}
 # Required packages
-
+library(knitr)
 ```
 
 The St. Johns River Water Management District uses Sea-Bird Scientific HydroCycle-PO4 Phosphate Sensors to collect phosphate data to support various projects.  These are continuously deployed, collecting data every two hours and transmitting data files to District servers via telemetry.  The data files are not formatted well for direct import into AQUARIUS Time-Series, and there is some pre-processing that makes it easier for the data to be quality assured once it is imported.
@@ -21,18 +23,18 @@ The program for HydroCycle-PO4 data used by the District is formatted like this:
 df <- read.csv("~/Documents/RProjects/Aquarius_Cycle/DataFiles/Jane_Green_Creek_CM_Cycle.dat",
                header = F)
 colnames(df) <- as.character(unlist(df[2,]))
-head(df)
+kable(head(df))
 ```
 
 First we need to strip the four header rows with metadata from the dataframe. This is not needed during pre-processing, but it will be bound back to the corrected data after pre-processing.
 ```{r}
 dfhead <- df[1:4,]
-dfhead
+kable(dfhead)
 ```
 
 ```{r}
 dfdata <- df[-c(1:4),]
-head(dfdata, 2)
+kable(head(dfdata, 2))
 ```
 
 Checking the structure of dfdata reveals that we need to change certain field classes.
@@ -51,7 +53,7 @@ str(dfdata)
 The Time-Series are updated regularly, so we work with only 30 days of data each time.
 ```{r}
 dfdata <- dfdata[dfdata$TIMESTAMP > (max(dfdata$TIMESTAMP) - 30),]
-head(dfdata, 2)
+kable(head(dfdata, 2))
 ```
 
 To align data within AQUARIUS Time-Series, HydroCycle-PO4 data are rounded to the closest hour.
@@ -59,7 +61,7 @@ To align data within AQUARIUS Time-Series, HydroCycle-PO4 data are rounded to th
 dfdata$CycleP_Rounded_Time <- ifelse(round((dfdata$CycleP_Time %% 1) * 100) < 30,
                                             trunc(dfdata$CycleP_Time_HHMM),
                                             ceiling(dfdata$CycleP_Time_HHMM))
-head(dfdata, 2)
+kable(head(dfdata, 2))
 ```
 
 Before proceeding, rows that contain no data or zeroes in the Date field are removed.
@@ -87,13 +89,12 @@ if(nrow(dfdata) > 0) {
   }
 }
 dfdata$TIMESTAMP <- as.POSIXct(dfdata$TIMESTAMP,format = c("%Y-%m-%d %H:%M"), tz = "EST")
-head(dfdata, 2)
+kable(head(dfdata, 2))
 ```
 
 The rounded time field is removed.
 ```{r}
 dfdata <- dfdata[, -which(names(dfdata) %in% c("CycleP_Rounded_Time"))]
-str(dfdata)
 ```
 
 All rows with NaN in the RunNum column are removed because they do not include usable data.
@@ -169,6 +170,5 @@ The header file and data file are combined again, and the CycleP_Date_Year field
 ```{r}
 alldata <- rbind(dfhead,dfdata)
 alldata <- alldata[, -which(names(alldata) %in% c("CycleP_Date_Year"))]
-head(alldata, 2)
+kable(head(alldata))
 ```
-
